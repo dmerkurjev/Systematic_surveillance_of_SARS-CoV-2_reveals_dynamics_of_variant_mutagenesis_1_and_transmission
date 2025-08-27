@@ -24,24 +24,24 @@ pos4=(SRX7865902)    # SRX7865902
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${youngminusd[@]}" "${youngplusd[@]}" "${senescentminusd[@]}" "${senescentplud[@]}"; do
+for r in "${neg1[@]}" "${neg2[@]}" "${pos1[@]}" "${pos2[@]}" "${pos1[@]}" "${pos2[@]}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
-for r in "${youngminusd[@]}" "${youngplusd[@]}" "${senescentminusd[@]}" "${senescentplud[@]}"; do
+for r in ${neg1[@]}" "${neg2[@]}" "${pos1[@]}" "${pos2[@]}" "${pos1[@]}" "${pos2[@]}"; do
   fasterq-dump -e 16 -p -O . "$r"
   gzip -f "${r}.fastq"
 done
 
 # Concatenate per-sample FASTQs
-cat "${youngminusd[@]/%/.fastq.gz}"  > ym.fastq.gz
-cat "${youngplusd[@]/%/.fastq.gz}"  > yp.fastq.gz
-cat "${senescentminusd[@]/%/.fastq.gz}" > sm.fastq.gz
-cat "${senescentplusd[@]/%/.fastq.gz}" > sp.fastq.gz
+cat "${neg1[@]/%/.fastq.gz}"  > ym.fastq.gz
+cat "${neg2[@]/%/.fastq.gz}"  > yp.fastq.gz
+cat "${pos1[@]/%/.fastq.gz}" > sm.fastq.gz
+cat "${pos2[@]/%/.fastq.gz}" > sp.fastq.gz
 
 # Move to fastq/ folder
-mv y*.fastq.gz s*.fastq.gz ../fastq/
+mv n*.fastq.gz p*.fastq.gz ../fastq/
 
 # -------------------- QC --------------------
 
