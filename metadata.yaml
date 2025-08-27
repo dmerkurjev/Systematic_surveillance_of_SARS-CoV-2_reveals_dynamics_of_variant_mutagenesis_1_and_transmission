@@ -5,39 +5,39 @@
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 paper_title:  Ligand-specific regulation of a binary enhancer code dictating cellular senescence
-journal: Proc Natl Acad Sci U S A\
-publication_date: "2025-06-17"\
-doi: 10.1073/pnas.2506321122\
-series_accession: GSE146585\
-bioproject: PRJNA610861\
+\f0\fs24 \cf0 paper_title:  Systematic surveillance of SARS-CoV-2 reveals dynamics of variant mutagenesis and transmission in a large urban population
+journal: Nature Communications
+publication_date: "2024-12-30"\
+doi: https://doi.org/10.1101/2024.07.25.24311007
+series_accession: GSE224951\
+bioproject: 	PRJNA933169\
 domain: rna_seq\
 organism: Homo sapiens\
 experiment_type: RNA seq\
-platform: Illumina HiSeq 2500\
+platform: Illumina HiSeq 500\
 ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg38) \
 read_type: single_end\
 sample_count: 6\
 sra_runs_total: 6\
 \
 samples:\
-  Young_1:\
-    condition: minus_dox\
+  Neg_1:\
+    condition: Negative human nasopharyngeal swab group 1\
     sra_runs: [SRX19322489]\
-  Young_2:\
-    condition: plus_dox\
+  Neg_2:\
+    condition: Negative human nasopharyngeal swab group 1\
     sra_runs: [SRX7865900]\
-  Senescent_1:\
-    condition: minus_dox\
+  Neg_3:\
+    condition: Positive human nasopharyngeal swab group 1\
     sra_runs: [SRX19322492]\
-  Senescent_2:\
-    condition: plus_dox\
+  Neg_4:\
+    condition: Positive human nasopharyngeal swab group 1\
     sra_runs: [SRX19337747]\
-  Senescent_1:\
-    condition: minus_dox\
+  Pos_3:\
+    condition: Positive human nasopharyngeal swab group 1\
     sra_runs: [SRX19322492]\
-  Senescent_2:\
-    condition: plus_dox\
+  Pos_4:\
+    condition: Positive human nasopharyngeal swab group 1\
     sra_runs: [SRX19337747]\
 \
 paths:\
@@ -47,11 +47,11 @@ paths:\
   logs: logs/\
   qc: qc/\
   reference:\
-    hisat2_index: hisat2_index/hg38/genome\
-    annotation_gtf: gencode.v48.annotation.gtf\
+    hisat2_index: bowtie2_index/hg38/genome\
+    annotation_gtf: clinical_V2_sparsq_V1p2_amplicons.gtf \
 \
 workflow:\
   threads: 16\
-  aligner: hisat\
+  aligner: bowtie2\
   quantifier: normalizedcounts\
 notes: "Genome wide expression analysis of young vs senescent BJ fibroblasts"}
