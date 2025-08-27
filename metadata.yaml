@@ -17,22 +17,28 @@ experiment_type: RNA seq\
 platform: Illumina HiSeq 2500\
 ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg38) \
 read_type: single_end\
-sample_count: 4\
-sra_runs_total: 4\
+sample_count: 6\
+sra_runs_total: 6\
 \
 samples:\
   Young_1:\
     condition: minus_dox\
-    sra_runs: [SRX7865899]\
+    sra_runs: [SRX19322489]\
   Young_2:\
     condition: plus_dox\
     sra_runs: [SRX7865900]\
   Senescent_1:\
     condition: minus_dox\
-    sra_runs: [SRX7865901]\
+    sra_runs: [SRX19322492]\
   Senescent_2:\
     condition: plus_dox\
-    sra_runs: [SRX7865902]\
+    sra_runs: [SRX19337747]\
+  Senescent_1:\
+    condition: minus_dox\
+    sra_runs: [SRX19322492]\
+  Senescent_2:\
+    condition: plus_dox\
+    sra_runs: [SRX19337747]\
 \
 paths:\
   fastq: fastq/\
