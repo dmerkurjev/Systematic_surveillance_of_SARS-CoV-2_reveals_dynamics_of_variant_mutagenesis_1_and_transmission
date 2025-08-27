@@ -47,8 +47,8 @@ paths:\
   logs: logs/\
   qc: qc/\
   reference:\
-    hisat2_index: bowtie2_index/hg38/genome\
-    annotation_gtf: clinical_V2_sparsq_V1p2_amplicons.gtf \
+    bowtie2_index: bowtie2_index/hg38/genome\
+    annotation_gtf: clinical_V2_sparsq_V1p2_amplicons.gtf\
 \
 workflow:\
   threads: 16\
