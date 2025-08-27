@@ -47,7 +47,7 @@ pipeline.version: preclinical
 
 Reference files:
 
-Transcript annotation: gencode.v48.annotation.gtf
+Transcript annotation: clinical_V2_sparsq_V1p2_amplicons.gtf
 Alignment index: hg38
 Related publication:
 PMID: 39738001
@@ -61,7 +61,7 @@ fastq/    # concatenated FASTQs (one per sample)
 aligned/  # hisat-aligned BAMs  
 counts/   # gene-level count matrix   
 qc/       # FastQC output  
-hisat2_index/  # reference index for alignment  
+bowtie2_index/  # reference index for alignment  
 
 
 You can skip raw FASTQ processing and go straight to analysis using data_RNAcounts/final_counts_symbols.tsv.
