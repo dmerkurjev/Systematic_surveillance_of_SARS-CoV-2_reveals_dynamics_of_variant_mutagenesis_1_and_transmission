@@ -7,17 +7,19 @@
 
 # Define project structure relative to current location
 PROJECT_DIR="./data_pre_processing"
-mkdir -p "${PROJECT_DIR}"/{raw,fastq,aligned,counts,logs,qc,STAR_index}
+mkdir -p "${PROJECT_DIR}"/{raw,fastq,aligned,counts,logs,qc,bowtie2_index}
 
 
 cd "${PROJECT_DIR}/raw"
 
 
 # Group SRA run IDs by biological sample 
-youngminusd=(SRX7865899)   # SRX7865899
-youngplusd=(SRX7865900)   # SRX7865900
-senescentminusd=(SRX7865901)    # SRX7865901
-senescentplusd=(SRX7865902)    # SRX7865902
+neg1=(SRX19322489)   # SRX19322489
+neg2=(SRX19322492)   # SRX19322492 
+pos1=(SRX19337747)    # SRX19337747
+pos2=(SRX19347479)    # SRX7865902
+pos3=(SRX7865901)    # SRX7865901
+pos4=(SRX7865902)    # SRX7865902
 
 # -------------------- Download & Convert --------------------
 
