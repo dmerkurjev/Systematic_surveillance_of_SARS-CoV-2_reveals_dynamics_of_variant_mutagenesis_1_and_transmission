@@ -17,9 +17,9 @@ cd "${PROJECT_DIR}/raw"
 neg1=(SRX19322489)   # SRX19322489
 neg2=(SRX19322492)   # SRX19322492 
 pos1=(SRX19337747)    # SRX19337747
-pos2=(SRX19347479)    # SRX7865902
-pos3=(SRX7865901)    # SRX7865901
-pos4=(SRX7865902)    # SRX7865902
+pos2=(SRX19347479)    # SRX19347479
+pos3=(SRX20144787)    # SRX20144787
+pos4=(SRX20144785)    # SRX7865902
 
 # -------------------- Download & Convert --------------------
 
@@ -35,10 +35,12 @@ for r in ${neg1[@]}" "${neg2[@]}" "${pos1[@]}" "${pos2[@]}" "${pos1[@]}" "${pos2
 done
 
 # Concatenate per-sample FASTQs
-cat "${neg1[@]/%/.fastq.gz}"  > ym.fastq.gz
-cat "${neg2[@]/%/.fastq.gz}"  > yp.fastq.gz
-cat "${pos1[@]/%/.fastq.gz}" > sm.fastq.gz
-cat "${pos2[@]/%/.fastq.gz}" > sp.fastq.gz
+cat "${neg1[@]/%/.fastq.gz}"  > neg1.fastq.gz
+cat "${neg2[@]/%/.fastq.gz}"  > neg2.fastq.gz
+cat "${pos1[@]/%/.fastq.gz}" > pos1.fastq.gz
+cat "${pos2[@]/%/.fastq.gz}" > pos2.fastq.gz
+cat "${pos3[@]/%/.fastq.gz}" > pos3.fastq.gz
+cat "${pos4[@]/%/.fastq.gz}" > pos4.fastq.gz
 
 # Move to fastq/ folder
 mv n*.fastq.gz p*.fastq.gz ../fastq/
@@ -46,7 +48,7 @@ mv n*.fastq.gz p*.fastq.gz ../fastq/
 # -------------------- QC --------------------
 
 cd ../fastq
-fastqc ym.fastq.gz yp.gz sm.fastq.gz sp.fastq.gz \
+fastqc neg1.fastq.gz neg2.gz pos1.fastq.gz pos2.fastq.gz pos1.fastq.gz pos2.fastq.gz \
   -o ../qc --threads 16
 
 # -------------------- Alignment (hisat) --------------------
