@@ -1,4 +1,4 @@
-Senescence RNA-seq — Preprocessing & Analysis
+ SARS-CoV-2 RNA-seq — Preprocessing & Analysis
 
 This repository contains an end-to-end workflow for RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm).
 It includes two main components:
@@ -12,10 +12,8 @@ Performs differential expression analysis using edgeR.
 Data
 
 SRA BioProject: 39738001 
-BJ fibroblasts transduced with doxycycline inducible empty vector control retroviruses were grown in the absence
-or continued presence of doxycycline (20nm), and young-quiescent or senescent cells were collected for RNA-seq. 
-Senescent and young doxycycline treated samples were compared for changes in genes expression, and senescent and 
-young doxycycline untreated samples were compared separately.
+RNAseq and sequence variant analysis for 63036 human nasopharyngeal swabs for SARS-CoV-2, with 1928 negative swabs and 2886 synthetic controls.
+(part2) Additional RNAseq and sequence variant analysis for 4 human nasopharyngeal swabs for SARS-CoV-2, with 2 negative swabs.
 
 Sample 1: GSM7036174 (SRX19322489)
 tissue: human nasopharyngeal swab
