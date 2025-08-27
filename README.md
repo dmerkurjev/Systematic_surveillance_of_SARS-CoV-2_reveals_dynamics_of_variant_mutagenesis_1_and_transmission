@@ -11,38 +11,48 @@ Performs differential expression analysis using edgeR.
 
 Data
 
-SRA BioProject: PRJNA610861 
+SRA BioProject: 39738001 
 BJ fibroblasts transduced with doxycycline inducible empty vector control retroviruses were grown in the absence
 or continued presence of doxycycline (20nm), and young-quiescent or senescent cells were collected for RNA-seq. 
 Senescent and young doxycycline treated samples were compared for changes in genes expression, and senescent and 
 young doxycycline untreated samples were compared separately.
 
-Sample 1: GSM4395596 (SRX7865899)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Minus
+Sample 1: GSM7036174 (SRX19322489)
+tissue: human nasopharyngeal swab
+sample type: negative sample
+pipeline.version: preclinical
 
-Sample 2: GSM4395597 (SRX7865900)
-cell line: BJ Fibroblast
-Stage: Young - Quiescent
-treatment: Doxycycline Plus
+Sample 2: GSM4395597 (SRX19322492)
+tissue: human nasopharyngeal swab
+sample type: negative sample
+pipeline.version: preclinical
 
-Sample 3: GSM4395598 (SRX7865901)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Minus
+Sample 3: GSM7039241 (SRX19337747)
+tissue: human nasopharyngeal swab
+sample type: positive sample
+pipeline.version: preclinical
 
-Sample 4: GSM4395599 (SRX7865902)
-cell line: BJ Fibroblast
-Stage: Senescent
-treatment: Doxycycline Plus
+Sample 4: GSM7039810 (SRX19347479)
+tissue: human nasopharyngeal swab
+sample type: positive sample
+pipeline.version: preclinical
+
+Sample 5: GSM7039241 (GSM7257036)
+tissue: human nasopharyngeal swab
+sample type: positive sample
+pipeline.version: preclinical
+
+Sample 6: GSM7039810 (GSM7257037)
+tissue: human nasopharyngeal swab
+sample type: positive sample
+pipeline.version: preclinical
 
 Reference files:
 
 Transcript annotation: gencode.v48.annotation.gtf
 Alignment index: hg38
 Related publication:
-PMID: 40493192
+PMID: 39738001
 
 Directory Output
 
