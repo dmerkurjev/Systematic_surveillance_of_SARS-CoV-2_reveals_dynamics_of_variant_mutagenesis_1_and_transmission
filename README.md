@@ -1,37 +1,37 @@
- SARS-CoV-2 RNA-seq — Preprocessing & Analysis
+SARS-CoV-2 RNA-seq — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for RNA/Seq variant analysis of 4 human nasopharyngeal swabs for SARS-CoV-2.
+This repository contains an end-to-end workflow for RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm).
 It includes two main components:
 
 Preprocessing (Clean.sh)
 Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene transcription level.
 
 Analysis (Differential_expression.sh)
-
+Performs differential expression analysis using edgeR.
 
 Data
 
 SRA BioProject: 39738001 
-RNAseq and sequence variant analysis for 4 human nasopharyngeal swabs for SARS-CoV-2, with 4 negative swabs and 2 negative controls.
+RNAseq and sequence variant analysis for 6 human nasopharyngeal swabs for SARS-CoV-2, with 2 positive swabs and 4 negative swabs.
 
-Sample 1: GSM7275246 (SRX20174770)
+Sample 1: GSM7275266 (SRX20174770)
 tissue: human nasopharyngeal swab
 sample type: negative sample
 pipeline.version: preclinical
 
-Sample 2: GSM7275247 (SRX20174771)
+Sample 2: GSM7275267 (SRX20174771)
 tissue: human nasopharyngeal swab
 sample type: negative sample
 pipeline.version: preclinical
 
 Sample 3: GSM7275378 (SRX20176102)
 tissue: human nasopharyngeal swab
-sample type: negative sample
+sample type: positive sample
 pipeline.version: preclinical
 
 Sample 4: GSM7275379 (SRX20176103)
 tissue: human nasopharyngeal swab
-sample type: negative sample
+sample type: positive sample
 pipeline.version: preclinical
 
 Sample 5: GSM7275380 (SRX20176104)
