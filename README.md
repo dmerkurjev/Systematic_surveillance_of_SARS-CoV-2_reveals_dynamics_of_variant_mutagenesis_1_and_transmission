@@ -1,46 +1,45 @@
  SARS-CoV-2 RNA-seq — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm).
+This repository contains an end-to-end workflow for RNA/Seq variant analysis of 4 human nasopharyngeal swabs for SARS-CoV-2.
 It includes two main components:
 
 Preprocessing (Clean.sh)
 Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene transcription level.
 
 Analysis (Differential_expression.sh)
-Performs differential expression analysis using edgeR.
+
 
 Data
 
 SRA BioProject: 39738001 
-RNAseq and sequence variant analysis for 63036 human nasopharyngeal swabs for SARS-CoV-2, with 1928 negative swabs and 2886 synthetic controls.
-(part2) Additional RNAseq and sequence variant analysis for 4 human nasopharyngeal swabs for SARS-CoV-2, with 2 negative swabs.
+RNAseq and sequence variant analysis for 4 human nasopharyngeal swabs for SARS-CoV-2, with 4 negative swabs and 2 negative controls.
 
-Sample 1: GSM7036174 (SRX19322489)
+Sample 1: GSM7275246 (SRX20174770)
 tissue: human nasopharyngeal swab
 sample type: negative sample
 pipeline.version: preclinical
 
-Sample 2: GSM4395597 (SRX19322492)
+Sample 2: GSM7275247 (SRX20174771)
 tissue: human nasopharyngeal swab
 sample type: negative sample
 pipeline.version: preclinical
 
-Sample 3: GSM7039241 (SRX19337747)
+Sample 3: GSM7275378 (SRX20176102)
+tissue: human nasopharyngeal swab
+sample type: negative sample
+pipeline.version: preclinical
+
+Sample 4: GSM7275379 (SRX20176103)
+tissue: human nasopharyngeal swab
+sample type: negative sample
+pipeline.version: preclinical
+
+Sample 5: GSM7275380 (SRX20176104)
 tissue: human nasopharyngeal swab
 sample type: positive sample
 pipeline.version: preclinical
 
-Sample 4: GSM7039810 (SRX19347479)
-tissue: human nasopharyngeal swab
-sample type: positive sample
-pipeline.version: preclinical
-
-Sample 5: GSM7039241 (GSM7257036)
-tissue: human nasopharyngeal swab
-sample type: positive sample
-pipeline.version: preclinical
-
-Sample 6: GSM7039810 (GSM7257037)
+Sample 6: GSM7275381 (SRX20176105)
 tissue: human nasopharyngeal swab
 sample type: positive sample
 pipeline.version: preclinical
