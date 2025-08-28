@@ -16,31 +16,31 @@ cd "${PROJECT_DIR}/raw"
 # Group SRA run IDs by biological sample 
 pos1=(SRX20174770)   # SRX20174770
 ps22=(SRX20174770)   # SRX20174771
-neg1=(SRX19337747)    # SRX19337747
-neg2=(SRX19347479)    # SRX19347479
-neg3=(SRX20144787)    # SRX20144787
-neg4=(SRX20144785)    # SRX7865902
+neg1=(SRX20176102)    # SRX20176102
+neg2=(SRX20176103)    # SRX20176103
+neg3=(SRX20176104)    # SRX20176104
+neg4=(SRX20176104)    # SRX20176105
 
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${neg1[@]}" "${neg2[@]}" "${pos1[@]}" "${pos2[@]}" "${pos1[@]}" "${pos2[@]}"; do
+for r in "${pos1[@]}" "${pos2[@]}" "${neg1[@]}" "${neg2[@]}" "${neg3[@]}" "${neg4[@]}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
-for r in ${neg1[@]}" "${neg2[@]}" "${pos1[@]}" "${pos2[@]}" "${pos1[@]}" "${pos2[@]}"; do
+for r in "${pos1[@]}" "${pos2[@]}" "${neg1[@]}" "${neg2[@]}" "${neg3[@]}" "${neg4[@]}"; do
   fasterq-dump -e 16 -p -O . "$r"
   gzip -f "${r}.fastq"
 done
 
 # Concatenate per-sample FASTQs
-cat "${neg1[@]/%/.fastq.gz}"  > neg1.fastq.gz
-cat "${neg2[@]/%/.fastq.gz}"  > neg2.fastq.gz
-cat "${pos1[@]/%/.fastq.gz}" > pos1.fastq.gz
-cat "${pos2[@]/%/.fastq.gz}" > pos2.fastq.gz
-cat "${pos3[@]/%/.fastq.gz}" > pos3.fastq.gz
-cat "${pos4[@]/%/.fastq.gz}" > pos4.fastq.gz
+cat "${pos1[@]/%/.fastq.gz}"  > pos1.fastq.gz
+cat "${pos2[@]/%/.fastq.gz}"  > pos2.fastq.gz
+cat "${neg1[@]/%/.fastq.gz}" > neg1.fastq.gz
+cat "${neg2[@]/%/.fastq.gz}" > neg2.fastq.gz
+cat "${neg3[@]/%/.fastq.gz}" > neg3.fastq.gz
+cat "${neg4[@]/%/.fastq.gz}" > neg4.fastq.gz
 
 # Move to fastq/ folder
 mv n*.fastq.gz p*.fastq.gz ../fastq/
@@ -48,26 +48,26 @@ mv n*.fastq.gz p*.fastq.gz ../fastq/
 # -------------------- QC --------------------
 
 cd ../fastq
-fastqc neg1.fastq.gz neg2.gz pos1.fastq.gz pos2.fastq.gz pos1.fastq.gz pos2.fastq.gz \
+fastqc pos1.fastq.gz pos2.gz neg1.fastq.gz neg2.fastq.gz neg3.fastq.gz neg4.fastq.gz \
   -o ../qc --threads 16
 
 # -------------------- Alignment (hisat) --------------------
 
-curl -O ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/data/hg38.tar.gz
+curl -O ftp://ftp.ccb.jhu.edu/pub/infphilo/bowtie2/data/hg38.tar.gz
 
-mkdir hisat2_index
-cd hisat2_index
+mkdir bowtie2_index
+cd bowtie2_index
 tar -xzf hg38.tar.gz
 
 cd hisat2_index
-SAMPLES=(ym,yp,sm,sp)
+SAMPLES=(pos1,pos2,neg1,neg2,neg3,neg4)
 
 # Align each sample
 for sample in "${SAMPLES[@]}"
 do
   echo "Aligning ${sample}..."
   hisat2 -p 4 \
-    -x hisat2_index/hg38/genome \
+    -x bowtie2_index/hg38/genome \
     -U fastq/${sample}.fastq.gz \
     2> logs/${sample}_hisat2.log | \
     samtools sort -@ 4 -o aligned/${sample}.bam
