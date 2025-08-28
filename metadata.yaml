@@ -22,23 +22,23 @@ sra_runs_total: 6\
 \
 samples:\
   Neg_1:\
-    condition: Negative human nasopharyngeal swab group 1\
-    sra_runs: [SRX19322489]\
+    condition: Positive human nasopharyngeal swab group 1\
+    sra_runs: [	SRX20174770]\
   Neg_2:\
-    condition: Negative human nasopharyngeal swab group 1\
-    sra_runs: [SRX7865900]\
+    condition: Positive human nasopharyngeal swab group 1\
+    sra_runs: [	SRX20174771]\
   Neg_3:\
-    condition: Positive human nasopharyngeal swab group 1\
-    sra_runs: [SRX19322492]\
+    condition: Negative human nasopharyngeal swab group 1\
+    sra_runs: [SRX20176102]\
   Neg_4:\
-    condition: Positive human nasopharyngeal swab group 1\
-    sra_runs: [SRX19337747]\
+    condition: Negative human nasopharyngeal swab group 1\
+    sra_runs: [SRX20176103]\
   Pos_3:\
-    condition: Positive human nasopharyngeal swab group 1\
-    sra_runs: [SRX19322492]\
+    condition: Negative human nasopharyngeal swab group 1\
+    sra_runs: [SRX20176104]\
   Pos_4:\
-    condition: Positive human nasopharyngeal swab group 1\
-    sra_runs: [SRX19337747]\
+    condition: Negative human nasopharyngeal swab group 1\
+    sra_runs: [SRX20176105]\
 \
 paths:\
   fastq: fastq/\
