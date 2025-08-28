@@ -1,6 +1,6 @@
 SARS-CoV-2 RNA-seq — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for variant analysis of 6 human nasopharyngeal swabs for SARS-CoV-2, with 2 positive swabs and 4 negative swabs.
+This repository contains an end-to-end workflow for variant analysis of 6 human nasopharyngeal swabs for SARS-CoV-2 with 2 positive swabs and 4 negative swabs.
 It includes two main components:
 
 Preprocessing (Clean.sh)
