@@ -6,26 +6,27 @@
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 task: >\
-  RNA-seq analysis of early passage and senescent BJ fibroblasts in the absence or continued presence of doxycycline (20nm) \
-  (4 samples: young -dox, young +dox, senescent -dox, senescent +dox). Using the provided FASTQs\
+  An end-to-end workflow for variant analysis of 6 human nasopharyngeal swabs for SARS-CoV-2 with 2 positive swabs and 4 negative swabs.
+It includes two main components \
+  (6 samples: 2 positive swabs and 4 negative swabs). Using the provided FASTQs\
   and the following pipeline (Trimmomatic 
 \f1 \uc0\u8594 
-\f0  hisat
+\f0  SPARseq
 \f1 \uc0\u8594 
 \f0  normalized counts 
 \f1 \uc0\u8594 
-\f0  edgeR),\
+\f0  count),\
   answer the following:\
 \
 questions:\
   - id: q1\
     stage: read_processing\
-    text: "How many sequencing lanes were concatenated to form sample young -dox?"\
+    text: "How many sequencing lanes were concatenated to form sample GSM7275266?"\
     answer_type: integer_exact\
 \
   - id: q2\
     stage: quality_control\
-    text: "What is the library size (total read counts) for sample senescent +dox?"\
+    text: "What is the library size (total read counts) for sample GSM7275378?"\
     answer_type: integer_exact\
 \
   - id: q3\
