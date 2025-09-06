@@ -5,17 +5,17 @@
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 paper_title:  Systematic surveillance of SARS-CoV-2 reveals dynamics of variant mutagenesis and transmission in a large urban population
-journal: Nature Communications
+\f0\fs24 \cf0 paper_title: Toward a CRISPR-based mouse model of Vhl-deficient clear cell kidney cancer: Initial experience and lessons learned
+journal: Proc Natl Acad Sci U S A
 publication_date: "2024-12-30"\
-doi: https://doi.org/10.1101/2024.07.25.24311007
-series_accession: GSE224951\
-bioproject: 	PRJNA933169\
+doi: 0.1073/pnas.2408549121
+series_accession: GSE275231\
+bioproject: 	PRJNA1150068\
 domain: rna_seq\
 organism: Homo sapiens\
 experiment_type: RNA seq\
-platform: Illumina HiSeq 500\
-ref_genome: Homo sapiens (human) genome assembly GRCh38 (hg38) \
+platform: Illumina NovaSeq X\
+ref_genome: Mus musculus (house mouse) genome assembly GRCm38 (mm10) \
 read_type: single_end\
 sample_count: 6\
 sra_runs_total: 6\
