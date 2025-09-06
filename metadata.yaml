@@ -22,23 +22,23 @@ sra_runs_total: 6\
 \
 samples:\
   Neg_1:\
-    condition: Positive human nasopharyngeal swab group 1\
-    sra_runs: [	SRX20174770]\
+    condition: Normal kidney group 1\
+    sra_runs: [SRX25770698]\
   Neg_2:\
-    condition: Positive human nasopharyngeal swab group 1\
-    sra_runs: [	SRX20174771]\
+    condition: Normal kidney group 2\
+    sra_runs: [SRX25770700]\
   Neg_3:\
-    condition: Negative human nasopharyngeal swab group 1\
-    sra_runs: [SRX20176102]\
+    condition: Normal kidney group 3\
+    sra_runs: [SRX25770701]\
   Neg_4:\
-    condition: Negative human nasopharyngeal swab group 1\
-    sra_runs: [SRX20176103]\
+    condition: Tumor kidney group 1\
+    sra_runs: [SRX25770708]\
   Pos_3:\
-    condition: Negative human nasopharyngeal swab group 1\
-    sra_runs: [SRX20176104]\
+    condition: Tumor kidney group 2\
+    sra_runs: [SRX25770709]\
   Pos_4:\
-    condition: Negative human nasopharyngeal swab group 1\
-    sra_runs: [SRX20176105]\
+    condition: Tumpr kidney group 3\
+    sra_runs: [SRX25770710]\
 \
 paths:\
   fastq: fastq/\
@@ -54,4 +54,4 @@ workflow:\
   threads: 16\
   aligner: bowtie2\
   quantifier: normalizedcounts\
-notes: "Genome wide expression analysis of young vs senescent BJ fibroblasts"}
+notes: "Toward a CRISPR-based mouse model of Vhl-deficient clear cell kidney cancer: Initial experience and lessons learned"}
