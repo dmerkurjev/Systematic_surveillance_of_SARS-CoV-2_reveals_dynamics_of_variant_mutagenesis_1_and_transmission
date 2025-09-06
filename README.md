@@ -1,6 +1,6 @@
-SARS-CoV-2 RNA-seq — Preprocessing & Analysis
+CRISP-based mouse model of Vhl-deficient clear cell kidney cancer — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for variant analysis of 6 human nasopharyngeal swabs for SARS-CoV-2 with 2 positive swabs and 4 negative swabs.
+This repository contains an end-to-end workflow for RNA-Seq CRISP analysis of 3 normal and 3 tumor kidney samples.
 It includes two main components:
 
 Preprocessing (Clean.sh)
@@ -12,7 +12,7 @@ Performs differential expression analysis using edgeR.
 Data
 
 SRA BioProject: 39738001 
-RNAseq and sequence variant analysis for 6 human nasopharyngeal swabs for SARS-CoV-2, with 2 positive swabs and 4 negative swabs.
+RNAseq and CRISP analysis for 3 normal and 3 tumor kidney samples.
 
 Sample 1: GSM7275266 (SRX20174770)
 tissue: human nasopharyngeal swab
