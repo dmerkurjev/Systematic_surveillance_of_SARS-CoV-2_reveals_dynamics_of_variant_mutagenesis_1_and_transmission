@@ -4,52 +4,46 @@ This repository contains an end-to-end workflow for RNA-Seq CRISP analysis of 3 
 It includes two main components:
 
 Preprocessing (Clean.sh)
-Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene transcription level.
+Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene expression level.
 
-Analysis (Differential_expression.sh)
-Performs differential expression analysis using edgeR.
+Analysis (CRISP.sh)
+Performs RNA-Seq and CRISP analysis using edgeR.
 
 Data
 
-SRA BioProject: 39738001 
+SRA BioProject: PRJNA1150068
 RNAseq and CRISP analysis for 3 normal and 3 tumor kidney samples.
 
-Sample 1: GSM7275266 (SRX20174770)
-tissue: human nasopharyngeal swab
-sample type: negative sample
-pipeline.version: preclinical
+Sample 1: GSM8473211 (SRX25770698)
+tissue: kidney
+group: Normal kidney
 
-Sample 2: GSM7275267 (SRX20174771)
-tissue: human nasopharyngeal swab
-sample type: negative sample
-pipeline.version: preclinical
+Sample 2: GSM8473212 (SRX25770699)
+tissue: kidney
+group: Normal kidney
 
-Sample 3: GSM7275378 (SRX20176102)
-tissue: human nasopharyngeal swab
-sample type: positive sample
-pipeline.version: preclinical
+Sample 3: GSM8473213 (SRX25770700)
+tissue: kidney
+group: Normal kidney
 
-Sample 4: GSM7275379 (SRX20176103)
-tissue: human nasopharyngeal swab
-sample type: positive sample
-pipeline.version: preclinical
+Sample 4: GSM7275379 (SRX25770708)
+tissue: kidney
+group: Tumor
 
-Sample 5: GSM7275380 (SRX20176104)
-tissue: human nasopharyngeal swab
-sample type: positive sample
-pipeline.version: preclinical
+Sample 5: GSM7275380 (SRX25770709)
+tissue: kidney
+group: Tumor
 
-Sample 6: GSM7275381 (SRX20176105)
-tissue: human nasopharyngeal swab
-sample type: positive sample
-pipeline.version: preclinical
+Sample 6: GSM7275381 (SRX25770710)
+tissue: kidney
+group: Tumor
 
 Reference files:
 
-Transcript annotation: clinical_V2_sparsq_V1p2_amplicons.gtf
-Alignment index: hg38
+Transcript annotation: tissue: gencode.vM38.annotation.gtf
+Alignment index: mm10
 Related publication:
-PMID: 39738001
+PMID: 39365820
 
 Directory Output
 
@@ -57,7 +51,6 @@ The preprocessing script creates a structured working directory data_pre_process
 
 raw/      # downloaded and processed SRA FASTQs  
 fastq/    # concatenated FASTQs (one per sample)  
-aligned/  # bowtie2-aligned BAMs  
 counts/   # gene-level count matrix   
 qc/       # FastQC output  
 bowtie2_index/  # reference index for alignment  
