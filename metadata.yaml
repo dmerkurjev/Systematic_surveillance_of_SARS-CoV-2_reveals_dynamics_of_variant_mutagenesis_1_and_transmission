@@ -26,10 +26,10 @@ samples:\
     sra_runs: [SRX25770698]\
   Neg_2:\
     condition: Normal kidney group 2\
-    sra_runs: [SRX25770700]\
+    sra_runs: [SRX25770699]\
   Neg_3:\
     condition: Normal kidney group 3\
-    sra_runs: [SRX25770701]\
+    sra_runs: [SRX25770700]\
   Neg_4:\
     condition: Tumor kidney group 1\
     sra_runs: [SRX25770708]\
