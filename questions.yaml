@@ -11,7 +11,7 @@ It includes two main components \
   (6 samples: 3 normal and 3 tumor samples). Using the provided FASTQs\
   and the following pipeline (Trimmomatic 
 \f1 \uc0\u8594 
-\f0  SPARseq
+\f0  CRISP-Seq
 \f1 \uc0\u8594 
 \f0  unnormalized counts 
 \f1 \uc0\u8594 
