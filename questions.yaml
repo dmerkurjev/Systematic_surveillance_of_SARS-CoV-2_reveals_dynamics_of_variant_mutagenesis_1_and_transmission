@@ -36,10 +36,10 @@ questions:\
 \
   - id: q4\
     stage: differential_expression\
-    text: "How many genes are upregulated \uc0\u8805 2-fold (log2FC \u8805  1) in young vs. senescent with FDR < 0.01?"\
+    text: "How many genes are upregulated \uc0\u8805 2-fold (log2FC \u8805  1) in  the TCGA ccRCC cohort compared to normal human kidney  with p-value < 0.001?"\
     answer_type: integer_exact\
 \
   - id: q5\
     stage: differential_expression\
-    text: "Which gene is ranked 3th by log2 fold change (most upregulated) in young vs. senescent +dox?"\
-    answer_type: string_exact}
+    text: "How many genes are shared (most upregulated) between species?"\
+    answer_type: integer_exact}
