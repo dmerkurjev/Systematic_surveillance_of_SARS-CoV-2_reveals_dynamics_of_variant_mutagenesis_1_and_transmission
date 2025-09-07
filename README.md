@@ -6,7 +6,7 @@ It includes two main components:
 Preprocessing (Clean.sh)
 Downloads SRA runs, builds 4 sample FASTQs, performs QC, alignment, and outputs gene expression level.
 
-Analysis (CRISP.sh)
+Analysis (CRISP1.R and CRISP2.R)
 Performs RNA-Seq and CRISP analysis using edgeR.
 
 Data
