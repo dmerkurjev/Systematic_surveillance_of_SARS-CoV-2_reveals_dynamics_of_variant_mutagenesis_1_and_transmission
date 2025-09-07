@@ -53,11 +53,11 @@ fastqc norm1.fastq.gz norm2.gz norm3.fastq.gz tum1.fastq.gz tum2.fastq.gz tum3.f
 
 # -------------------- Alignment (hisat) --------------------
 
-curl -O ftp://ftp.ccb.jhu.edu/pub/infphilo/bowtie2/data/hg38.tar.gz
+curl -O ftp://ftp.ccb.jhu.edu/pub/infphilo/bowtie2/data/mm10.tar.gz
 
 mkdir bowtie2_index
 cd bowtie2_index
-tar -xzf hg38.tar.gz
+tar -xzf mm10.tar.gz
 
 cd hisat2_index
 SAMPLES=(pos1,pos2,neg1,neg2,neg3,neg4)
@@ -67,7 +67,7 @@ for sample in "${SAMPLES[@]}"
 do
   echo "Aligning ${sample}..."
   hisat2 -p 4 \
-    -x bowtie2_index/hg38/genome \
+    -x bowtie2_index/mm10/genome \
     -U fastq/${sample}.fastq.gz \
     2> logs/${sample}_hisat2.log | \
     samtools sort -@ 4 -o aligned/${sample}.bam
@@ -80,8 +80,8 @@ done
 
 cd ..
 curl -L -o gencode.v48.annotation.gtf.gz \
-  https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v48.annotation.gtf.gz
-gunzip -f gencode.v48.annotation.gtf.gz
+  https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_38/gencode.vM38.annotation.gtf
+gunzip -f gencode.vM38.annotation.gtf.gz
 
 featureCounts -T 16 -t exon -g gene_name \
   -a gencode.v48.annotation.gtf \
