@@ -1,6 +1,6 @@
 CRISP-based mouse model of Vhl-deficient clear cell kidney cancer — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for RNA-Seq CRISP analysis of 3 normal and 3 tumor kidney samples.
+This repository contains an end-to-end workflow for RNA-Seq and CRISP analysis of 3 normal and 3 tumor kidney samples.
 It includes two main components:
 
 Preprocessing (Clean.sh)
