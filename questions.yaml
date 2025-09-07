@@ -41,5 +41,5 @@ questions:\
 \
   - id: q5\
     stage: differential_expression\
-    text: "How many genes are shared (most upregulated) between species?"\
+    text: "How many genes are shared (upregulated) between species?"\
     answer_type: integer_exact}
