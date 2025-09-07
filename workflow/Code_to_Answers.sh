@@ -4,23 +4,25 @@ Answers to questions path, please run full script succesfully first to run those
 # ---- Answers for q1..q5 ----
 # Requires objects 'counts', 'dds', and 'res' created above
 
-# q1: lanes concatenated for young -dox
+# q1: How many sequencing lanes were concatenated to form sample normal sample 2?
 # If you later generate a manifest upstream, read it here instead of hardcoding
 sample_lanes <- c(ym = 1L, yp = 1L, sm = 1L, sp = 1L)
-ans_q1 <- unname(sample_lanes["ym"])
+ans_q1 <- unname(sample_lanes["norm2"])
 
-# q2: library size for senescent -dox
+# q2: What is the library size (total read counts) for normal sample 1 and tumor sample 1?
 libsize <- colSums(counts)
-ans_q2 <- unname(libsize["sm"])
+ans_q2_1 <- unname(libsize["norm1"])
+ans_q2_2 <- unname(libsize["tum1"])
+ans_q2_2
 
-# q3: genes with nonzero counts in senescent +dox
-ans_q3 <- sum(counts[, "ym"] > 0)
+# q3: How many genes have nonzero counts in sample tumor 1?
+ans_q3 <- sum(counts[, "norm1"] > 0)
 
-# q4: genes upregulated ≥2 fold (log2FC ≥ 1) with FDR < 0.01
+# q4: How many genes are upregulated \uc0\u8805 2-fold (log2FC \u8805  1) in  the TCGA ccRCC cohort compared to normal human kidney  with p-value < 0.001?
 res_df <- as.data.frame(res)
-ans_q4 <- sum(res_df$log2FoldChange >= 1 & res_df$padj < 0.01, na.rm = TRUE)
+ans_q4 <- sum(res_df$log2FoldChange >= 1 & res_df$padj < 0.001, na.rm = TRUE)
 
-# q5: gene ranked 3th by log2 fold change among most upregulated
+# q5: How many genes are shared (upregulated) between species?
 res_df$SYMBOL <- rownames(res_df)
 up_rank <- res_df %>%
   dplyr::filter(!is.na(log2FoldChange) & log2FoldChange > 0) %>%
