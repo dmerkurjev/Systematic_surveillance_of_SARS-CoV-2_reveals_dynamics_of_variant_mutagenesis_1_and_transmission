@@ -14,33 +14,33 @@ cd "${PROJECT_DIR}/raw"
 
 
 # Group SRA run IDs by biological sample 
-pos1=(SRX20174770)   # SRX20174770
-ps22=(SRX20174770)   # SRX20174771
-neg1=(SRX20176102)    # SRX20176102
-neg2=(SRX20176103)    # SRX20176103
-neg3=(SRX20176104)    # SRX20176104
-neg4=(SRX20176104)    # SRX20176105
+norm1=(SRX25770698)   # SRX25770698
+norm2=(SRX25770699)   # SRX25770699
+norm3=(SRX25770700)    # SRX25770700
+tum1=(SRX25770708)    # SRX25770708
+tum2=(SRX25770709)    # SRX25770709
+tum3=(SRX25770710)    # SRX25770710
 
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${pos1[@]}" "${pos2[@]}" "${neg1[@]}" "${neg2[@]}" "${neg3[@]}" "${neg4[@]}"; do
+for r in "${norm1[@]}" "${norm2[@]}" "${norm3[@]}" "${tum1[@]}" "${tum2[@]}" "${tum3[@]}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
-for r in "${pos1[@]}" "${pos2[@]}" "${neg1[@]}" "${neg2[@]}" "${neg3[@]}" "${neg4[@]}"; do
+for r in "${norm1[@]}" "${norm2[@]}" "${norm3[@]}" "${tum1[@]}" "${tum2[@]}" "${tum3[@]}"; do
   fasterq-dump -e 16 -p -O . "$r"
   gzip -f "${r}.fastq"
 done
 
 # Concatenate per-sample FASTQs
-cat "${pos1[@]/%/.fastq.gz}"  > pos1.fastq.gz
-cat "${pos2[@]/%/.fastq.gz}"  > pos2.fastq.gz
-cat "${neg1[@]/%/.fastq.gz}" > neg1.fastq.gz
-cat "${neg2[@]/%/.fastq.gz}" > neg2.fastq.gz
-cat "${neg3[@]/%/.fastq.gz}" > neg3.fastq.gz
-cat "${neg4[@]/%/.fastq.gz}" > neg4.fastq.gz
+cat "${norm1[@]/%/.fastq.gz}"  > norm1.fastq.gz
+cat "${norm2[@]/%/.fastq.gz}"  > norm2.fastq.gz
+cat "${norm3[@]/%/.fastq.gz}" > norm3.fastq.gz
+cat "${tum1[@]/%/.fastq.gz}" > tum1.fastq.gz
+cat "${tum2[@]/%/.fastq.gz}" > tum2.fastq.gz
+cat "${tum3[@]/%/.fastq.gz}" > tum3.fastq.gz
 
 # Move to fastq/ folder
 mv n*.fastq.gz p*.fastq.gz ../fastq/
@@ -48,7 +48,7 @@ mv n*.fastq.gz p*.fastq.gz ../fastq/
 # -------------------- QC --------------------
 
 cd ../fastq
-fastqc pos1.fastq.gz pos2.gz neg1.fastq.gz neg2.fastq.gz neg3.fastq.gz neg4.fastq.gz \
+fastqc norm1.fastq.gz norm2.gz norm3.fastq.gz tum1.fastq.gz tum2.fastq.gz tum3.fastq.gz \
   -o ../qc --threads 16
 
 # -------------------- Alignment (hisat) --------------------
