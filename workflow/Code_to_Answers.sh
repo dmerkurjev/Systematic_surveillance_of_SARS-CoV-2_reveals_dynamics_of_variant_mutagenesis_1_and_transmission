@@ -13,7 +13,7 @@ ans_q1 <- unname(sample_lanes["norm2"])
 libsize <- colSums(counts)
 ans_q2_1 <- unname(libsize["norm1"])
 ans_q2_2 <- unname(libsize["tum1"])
-ans_q2_2
+ans_q2=ans_q2_1+ans_q2_2
 
 # q3: How many genes have nonzero counts in sample tumor 1?
 ans_q3 <- sum(counts[, "norm1"] > 0)
